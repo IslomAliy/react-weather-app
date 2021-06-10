@@ -1,3 +1,8 @@
+body {
+    background: url(/src/assets/bg3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;    
+}
 form {
     margin-top: 3rem;
 }
@@ -12,6 +17,12 @@ form input[name="country"] {
 }
 
 form input:focus {
-    background-color: transparent;
+    background-color: transparent !important;
     box-shadow: none !important;
+    color: white !important;
+}
+
+form input 
+.container::-webkit-input-placeholder{
+    color: white !important;
 }
