@@ -40,6 +40,32 @@ class App extends React.Component {
     return cell;
   }
 
+  get_WeatherIcon(icons, rangeId){
+    switch(true){
+      case rangeId >= 200 && rangeId <= 232:
+        this.setState({icon: this.weatherIcon.Thunderstorm });
+        break;
+        case rangeId >= 300 && rangeId <= 321:
+          this.setState({icon: this.weatherIcon.Dizzle });
+          break;
+        case rangeId >= 500 && rangeId <= 531:
+          this.setState({icon: this.weatherIcon.Rain });
+          break;
+        case rangeId >= 600 && rangeId <= 622:
+          this.setState({icon: this.weatherIcon.Snow });
+          break;
+        case rangeId >= 701 && rangeId <= 781:
+          this.setState({icon: this.weatherIcon.Atmosphere });
+          break;
+        case rangeId === 800:
+          this.setState({icon: this.weatherIcon.Clear });
+          break;
+        case rangeId >= 801 && rangeId <= 804:
+          this.setState({icon: this.weatherIcon.Clouds });
+          break;
+    }
+  }
+
   getWeather = async () => {
     const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=Tashkent&appid=${API_KEY}`);
     const response = await api_call.json();
