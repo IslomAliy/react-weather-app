@@ -63,6 +63,8 @@ class App extends React.Component {
         case rangeId >= 801 && rangeId <= 804:
           this.setState({icon: this.weatherIcon.Clouds });
           break;
+        default:
+          this.setState({icon: this.weatherIcon.Clouds }); 
     }
   }
 
@@ -79,8 +81,9 @@ class App extends React.Component {
       temp_min: this.calCelcius(response.main.temp_min),
       description: response.weather[0].description,
       icon: this.weatherIcon.Drizzle
+    });
 
-    })
+    this.get_WeatherIcon(this.weatherIcon, response.weather[0].id);
   }
 
   render(){
