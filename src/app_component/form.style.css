@@ -26,3 +26,8 @@ form input
 .container::-webkit-input-placeholder{
     color: white !important;
 }
+
+.author {
+    margin-top: 300px;
+    color: white;
+}
